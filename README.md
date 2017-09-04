@@ -61,6 +61,7 @@ Things you may want to cover:
 - belonga_to :user
 
 
+
 ## messagesテーブル
 
 |column|type|options|
