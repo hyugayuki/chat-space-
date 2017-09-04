@@ -28,7 +28,8 @@ Things you may want to cover:
 
 |column|type|options|
 |------|----|------|
-|name|string|null: false, unique: ture|
+|name|string|null: false, unique: ture, add_index :users, :name|
+|email|string|null: false, unique: true|
 
 ### Association
 - has_many :groups, through: members
@@ -39,10 +40,9 @@ Things you may want to cover:
 
 |column|type|options|
 |------|----|-------|
-|name|string|null: false, unique: ture|
+|name|string|null: false, unique: ture, add_index :groups, :name|
 
 ### Association
-
 - has_many :messages
 - has_many :users, through: members
 
