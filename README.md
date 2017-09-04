@@ -28,11 +28,10 @@ Things you may want to cover:
 
 |column|type|options|
 |------|----|------|
-|name|string|null: false|
-|group_id|integer|foreign_key: true|
+|name|string|null: false, unique: ture|
 
 ### Association
-- has_many :groups
+- has_many :groups, through: members
 - has_many :messages
 
 
@@ -40,13 +39,12 @@ Things you may want to cover:
 
 |column|type|options|
 |------|----|-------|
-|name|string|null: false|
-|user_id|integer|null :false, foreign_key: true|
+|name|string|null: false, unique: ture|
 
 ### Association
 
 - has_many :messages
-- has_many :users
+- has_many :users, through: members
 
 
 ## membersテーブル
@@ -66,7 +64,7 @@ Things you may want to cover:
 
 |column|type|options|
 |------|----|-------|
-|body|text|null: false|
+|content|string| |
 |image|string| |
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null:false, foreign_key: true|
