@@ -1,0 +1,18 @@
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+$group: #2f3e51;
+$user-name: #253141;
+$edit-btn: #38AEF0;
+$border: #eeeeee;
+$current-group: #333333;
+$members: #999999;
+$message-text: #434A54;
+$send-btn: rgba(56,174,240,0.8);
+$form: rgba(170,170,170,0.5);
+

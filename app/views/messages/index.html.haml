@@ -1,0 +1,31 @@
+.content
+  .content__notification
+  .content__side-content
+    .content__side-content__user-name
+      %h2 username
+      = link_to  do
+        %i.fa.fa-cog
+      = link_to  do
+        %i.fa.fa-pencil-square-o
+    .content__side-content__group-list
+      = render "group"
+  .content__right-content
+    .content__right-content__main-content
+      .content__right-content__main-content__head-wrapper
+        .content__right-content__main-content__head-wrapper__group
+          .content__right-content__main-content__head-wrapper__group__name
+            smpleグループ
+          .content__right-content__main-content__head-wrapper__group__member
+            member: seo neko
+        .content__right-content__main-content__head-wrapper__edit-btn
+          Edit
+      .content__right-content__main-content__main-wrapper
+        = render "post"
+    .content__right-content__form-wrapper
+      %ul{class: "content__right-content__form-wrapper__text"}
+        %li
+          %input{type: "text", name: "message", placeholder: "type a message", id: "aaa"}
+        %li
+          %span.fa.fa-picture-o
+        %li
+          %p<>Send
