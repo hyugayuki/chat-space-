@@ -1,0 +1,183 @@
+
+.content {
+    width: 100%;
+}
+
+.content__notification {
+    background-color: #38AEF0;
+    height: 30px;
+}
+// 左半分ーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+.content__side-content{
+    float: left;
+    width: 300px;
+    color: #FFFFFF;
+    background-color: #2f3e51;
+
+    min-height: 800px;
+}
+
+.content__side-content__user-name, .content__side-content__group-list__group{
+    height: 100px;
+    padding: 0 20px;
+}
+
+.content__side-content__user-name {
+    background-color: #253141;
+    font-size: 16px;
+    line-height: 100px;
+    h2 {
+        float: left;
+    }
+    i {
+        float: right;
+        padding-left: 5px;
+        padding-top: 40px;
+        color: white;
+    }
+}
+
+.content__side-content__group-list__group {
+    background-color: #2f3e51;
+    padding: 20px 20px 40px;
+}
+
+.content__side-content__group-list__group__name{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.content__side-content__group-list__group__message{
+    font-size: 11px;
+}
+
+
+
+// 右半分ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+.content__right-content{
+    float: left;
+    width: 1000px;
+    width: -webkit-calc(100% - 380px);
+    width: -moz-calc(100% - 380px);
+    width: calc(100% - 380px);
+}
+
+.content__right-content__main-content {
+    width: 100%;
+    background-color: white;
+}
+
+.content__right-content__main-content__head-wrapper{
+    @include clearfix();
+    width: 100%;
+    padding: 0 40px 10px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.content__right-content__main-content__head-wrapper__group {
+    float: left;
+}
+
+.content__right-content__main-content__head-wrapper__edit-btn {
+    float: right;
+    color: #38AEF0;
+    line-height: 40px;
+    height: 40px;
+    margin-top: 28px;
+    border: 1px solid #38AEF0;
+    padding: 0 20px;
+}
+
+.content__right-content__main-content__head-wrapper__group__name{
+    padding: 35px 0 15px;
+    font-size: 20px;
+    color: #333333;
+}
+
+.content__right-content__main-content__head-wrapper__group__member {
+    font-size: 12px;
+    color: #999999;
+}
+
+.content__right-content__main-content__main-wrapper{
+    width: 100%;
+    background-color: rgba(170,170,170,0.05);
+    padding: 0 40px;
+    max-height: 600px;
+    .content__right-content__main-content__main-wrapper__message{
+        padding: 46px 0 40px;
+    }
+}
+
+.content__right-content__main-content__main-wrapper__message__info {
+    @include clearfix();
+    line-height: 18px;
+    .content__right-content__main-content__main-wrapper__message-info__name {
+        float: left;
+        margin-right: 10px;
+        font-size: 16px
+    }
+    .content__right-content__main-content__main-wrapper__message-info__date {
+        float: left;
+        font-size: 12px;
+    }
+}
+
+.content__right-content__main-content__main-wrapper__message__text {
+    font-size: 14px;
+    color: #434A54;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+// 投稿フォーム---------------------------------------------------------------
+$form-height: 50px;
+
+.content__right-content__form-wrapper {
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(170,170,170,0.3);
+    width: 100%;
+    height: 90px;
+    .content__right-content__form-wrapper__text {
+        margin: 20px 40px;
+        height: $form-height;
+        line-height: 50px;
+        width: 700px;
+        width: -webkit-calc(100% - 380px);
+        width: -moz-calc(100% - 380px);
+        width: calc(100% - 380px);
+        input {
+            float: left;
+            height: $form-height;
+            border: none;
+            width: 700px;
+            width: -webkit-calc(100% - 150px);
+            width: -moz-calc(100% - 150px);
+            width: calc(100% - 150px);
+        }
+        span {
+            float: left;
+            line-height: $form-height;
+            width: 50px;
+            text-align: center;
+            padding-right: 10px;
+            margin-right: 15px;
+            background-color: white;
+        }
+        p {
+            float: left;
+            width: 60px;
+            text-align: center;
+            line-height: $form-height;
+            color: white;
+            background-color: rgba(56,174,240,0.8);
+            border: 1px solid rgba(56,174,240,1);
+        }
+    }
+}
