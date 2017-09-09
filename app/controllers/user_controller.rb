@@ -4,5 +4,6 @@ class UserController < ApplicationController
   end
 
   def update
+    redirect_to action: :index
   end
 end
