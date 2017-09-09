@@ -5,7 +5,7 @@
       %h2 username
       = link_to   do
         %i.fa.fa-cog
-      = link_to  edit_user_registration_path do
+      = link_to  edit_user_path(@user_id), method: :get do
         %i.fa.fa-pencil-square-o
     .content__side-content__group-list
       = render "group"
