@@ -90,32 +90,32 @@
             background-color: rgba(170,170,170,0.05);
             padding: 0 40px;
             max-height: 600px;
-            &__message{
-                padding: 46px 0 40px;
-                &__text {
-                    font-size: 14px;
-                    color: $message-text;
-                    margin-top: 10px;
-                }
-                &__info {
-                    @include clearfix();
-                    line-height: 18px;
-                    &__name {
-                        float: left;
-                        margin-right: 10px;
-                        font-size: 16px
-                    }
-                    &__date {
-                        float: left;
-                        font-size: 12px;
-                    }
-                }
-            }
         }
     }
 }
 
 
+.message{
+    padding: 46px 0 40px;
+    &__text {
+        font-size: 14px;
+        color: $message-text;
+        margin-top: 10px;
+    }
+    &__info {
+        @include clearfix();
+        line-height: 18px;
+        &__name {
+            float: left;
+            margin-right: 10px;
+            font-size: 16px
+        }
+        &__date {
+            float: left;
+            font-size: 12px;
+        }
+    }
+}
 
 
 
