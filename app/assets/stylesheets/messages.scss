@@ -12,7 +12,7 @@
     background-color: $group;
 
     min-height: 800px;
-    &__user-name, &__group-list__group{
+    &__user-name {
         height: 100px;
         padding: 0 20px;
     }
@@ -33,17 +33,20 @@
     &__group-list{
         height: 730px;
         overflow: scroll;
-        &__group {
-            background-color: $group;
-            padding: 20px 20px 40px;
-            &__name{
-              font-size: 15px;
-              margin-bottom: 5px;
-            }
-            &__message{
-              font-size: 11px;
-            }
-        }
+    }
+}
+
+.group {
+    height: 100px;
+    padding: 0 20px;
+    background-color: $group;
+    padding: 20px 20px 40px;
+    &__name{
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    &__message{
+      font-size: 11px;
     }
 }
 
