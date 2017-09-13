@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params)
+    @user = User.new(user_params)
+    if @user.save
       redirect_to root_path
     else
       render "edit"
