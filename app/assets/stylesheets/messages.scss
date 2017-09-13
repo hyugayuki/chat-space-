@@ -12,43 +12,40 @@
     background-color: $group;
 
     min-height: 800px;
-}
-
-.content__side-content__user-name, .content__side-content__group-list__group{
-    height: 100px;
-    padding: 0 20px;
-}
-
-.content__side-content__user-name {
-    background-color: $user-name;
-    font-size: 16px;
-    line-height: 100px;
-    h2 {
-        float: left;
+    &__user-name, &__group-list__group{
+        height: 100px;
+        padding: 0 20px;
     }
-    i {
-        float: right;
-        padding-left: 5px;
-        padding-top: 40px;
-        color: white;
+    &__user-name {
+        background-color: $user-name;
+        font-size: 16px;
+        line-height: 100px;
+        h2 {
+            float: left;
+        }
+        i {
+            float: right;
+            padding-left: 5px;
+            padding-top: 40px;
+            color: white;
+        }
+    }
+    &__group-list{
+        height: 730px;
+        overflow: scroll;
+        &__group {
+            background-color: $group;
+            padding: 20px 20px 40px;
+            &__name{
+              font-size: 15px;
+              margin-bottom: 5px;
+            }
+            &__message{
+              font-size: 11px;
+            }
+        }
     }
 }
-
-.content__side-content__group-list__group {
-    background-color: $group;
-    padding: 20px 20px 40px;
-}
-
-.content__side-content__group-list__group__name{
-    font-size: 15px;
-    margin-bottom: 5px;
-}
-
-.content__side-content__group-list__group__message{
-    font-size: 11px;
-}
-
-
 
 // 右半分ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 .content__right-content{
@@ -57,73 +54,65 @@
     width: -webkit-calc(100% - 380px);
     width: -moz-calc(100% - 380px);
     width: calc(100% - 380px);
-}
-
-.content__right-content__main-content {
-    width: 100%;
-    background-color: white;
-}
-
-.content__right-content__main-content__head-wrapper{
-    @include clearfix();
-    width: 100%;
-    padding: 0 40px 10px;
-    border-bottom: 1px solid $border;
-}
-
-.content__right-content__main-content__head-wrapper__group {
-    float: left;
-}
-
-.content__right-content__main-content__head-wrapper__edit-btn {
-    float: right;
-    color: $edit-btn;
-    line-height: 40px;
-    height: 40px;
-    margin-top: 28px;
-    border: 1px solid $edit-btn;
-    padding: 0 20px;
-}
-
-.content__right-content__main-content__head-wrapper__group__name{
-    padding: 35px 0 15px;
-    font-size: 20px;
-    color: $current-group;
-}
-
-.content__right-content__main-content__head-wrapper__group__member {
-    font-size: 12px;
-    color: $members;
-}
-
-.content__right-content__main-content__main-wrapper{
-    width: 100%;
-    background-color: rgba(170,170,170,0.05);
-    padding: 0 40px;
-    max-height: 600px;
-    .content__right-content__main-content__main-wrapper__message{
-        padding: 46px 0 40px;
+    &__main-content {
+        width: 100%;
+        background-color: white;
+        &__head-wrapper{
+            @include clearfix();
+            width: 100%;
+            padding: 0 40px 10px;
+            border-bottom: 1px solid $border;
+            &__edit-btn {
+                float: right;
+                color: $edit-btn;
+                line-height: 40px;
+                height: 40px;
+                margin-top: 28px;
+                border: 1px solid $edit-btn;
+                padding: 0 20px;
+            }
+            &__group {
+                float: left;
+                &__name{
+                padding: 35px 0 15px;
+                font-size: 20px;
+                color: $current-group;
+                }
+                &__member {
+                    font-size: 12px;
+                    color: $members;
+                }
+            }
+        }
+        &__main-wrapper{
+            width: 100%;
+            overflow: scroll;
+            background-color: rgba(170,170,170,0.05);
+            padding: 0 40px;
+            max-height: 600px;
+            &__message{
+                padding: 46px 0 40px;
+                &__text {
+                    font-size: 14px;
+                    color: $message-text;
+                    margin-top: 10px;
+                }
+                &__info {
+                    @include clearfix();
+                    line-height: 18px;
+                    &__name {
+                        float: left;
+                        margin-right: 10px;
+                        font-size: 16px
+                    }
+                    &__date {
+                        float: left;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
     }
-}
-
-.content__right-content__main-content__main-wrapper__message__info {
-    @include clearfix();
-    line-height: 18px;
-    .content__right-content__main-content__main-wrapper__message-info__name {
-        float: left;
-        margin-right: 10px;
-        font-size: 16px
-    }
-    .content__right-content__main-content__main-wrapper__message-info__date {
-        float: left;
-        font-size: 12px;
-    }
-}
-
-.content__right-content__main-content__main-wrapper__message__text {
-    font-size: 14px;
-    color: $message-text;
-    margin-top: 10px;
 }
 
 
@@ -140,7 +129,7 @@ $form-height: 50px;
     background-color: $form;
     width: 100%;
     height: 90px;
-    .content__right-content__form-wrapper__text {
+    &__text {
         margin: 20px 40px;
         height: $form-height;
         line-height: 50px;
