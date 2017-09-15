@@ -21,8 +21,8 @@ class GroupsController < ApplicationController
   end
 
   def update
-    @user = Group.new(group_params)
-    if @user.save
+    @group = Group.new(group_params)
+    if @group.save
       redirect_to :root_path, notice: '変更に成功しました'
     else
       render :edit
