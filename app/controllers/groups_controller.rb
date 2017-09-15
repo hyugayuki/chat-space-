@@ -17,12 +17,11 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.new
+    @group = Group.find(params[:group_id])
   end
 
   def update
-    @group = Group.new(group_params)
-    if @group.save
+    if @group.save(group_params)
       redirect_to :root_path, notice: '変更に成功しました'
     else
       render :edit
