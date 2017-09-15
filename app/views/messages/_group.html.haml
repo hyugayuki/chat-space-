@@ -1,20 +1,6 @@
-.content__side-content__group-list__group
-  .content__side-content__group-list__group__name
-    Group1
-  .content__side-content__group-list__group__message
-    まだメッセージはありません。
-.content__side-content__group-list__group
-  .content__side-content__group-list__group__name
-    Group1
-  .content__side-content__group-list__group__message
-    まだメッセージはありません。
-.content__side-content__group-list__group
-  .content__side-content__group-list__group__name
-    Group1
-  .content__side-content__group-list__group__message
-    まだメッセージはありません。
-.content__side-content__group-list__group
-  .content__side-content__group-list__group__name
-    Group1
-  .content__side-content__group-list__group__message
-    まだメッセージはありません。
+- current_user.groups.each do |group|
+  .group
+    .group__name
+      = group.name
+    .group__message
+      まだメッセージはありません。

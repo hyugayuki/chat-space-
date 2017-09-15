@@ -4,8 +4,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params)
-      redirect_to root_path
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to root_path,  notice: 'ユーザー情報を更新しました。'
     else
       render "edit"
     end
