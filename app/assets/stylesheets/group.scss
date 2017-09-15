@@ -7,6 +7,13 @@
   border-radius: 5px;
   box-sizing: border-box;
 
+  &__action-btn input {
+    display: inline-block;
+    padding: 12px 20px;
+    color: $white;
+    background-color: $bgc-blue;
+    border: 0;
+  }
   h1 {
     letter-spacing: 2px;
     font-size: 24px;
@@ -69,7 +76,7 @@
     text-align: right;
   }
 
-  &__input {
+  &__input input{
     float: left;
     width: 100%;
     line-height: 30px;
@@ -104,13 +111,5 @@
     &__btn--remove {
       color: $red;
     }
-  }
-
-  &__action-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    color: $white;
-    background-color: $bgc-blue;
-    border: 0;
   }
 }
