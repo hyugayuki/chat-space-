@@ -14,10 +14,20 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @group = Group.new
+  end
+
+  def update
+    @user = Group.new(group_params)
+    if @user.save
+      redirect_to :root_path, notice: '変更に成功しました'
+    else
+      render :edit
+    end
   end
 
   private
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, user_ids: [])
   end
 end
