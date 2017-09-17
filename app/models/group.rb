@@ -1,4 +1,5 @@
 class Group < ApplicationRecord
+  has_many :messages
   has_many :members, dependent: :destroy
   has_many :users, through: :members
 
