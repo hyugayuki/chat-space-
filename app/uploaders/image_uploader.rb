@@ -1,4 +1,7 @@
 class ImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+
+  process resize_to_limit: [300, 200]
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
