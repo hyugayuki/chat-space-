@@ -1,46 +1,60 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+form {
+    height: 100%;
+}
 
 .content {
     width: 100%;
-}
-
-// 左半分ーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-.content__side-content{
-    float: left;
-    width: 300px;
-    color: #FFFFFF;
-    background-color: $group;
-
-    min-height: 800px;
-    &__user-name {
-        height: 100px;
-        padding: 0 20px;
-    }
-    &__user-name {
-        background-color: $user-name;
-        font-size: 16px;
-        line-height: 100px;
-        h2 {
-            float: left;
+    height: 100%;
+    &__side-content{
+        float: left;
+        width: 300px;
+        height: 100%;
+        color: white;
+        background-color: $group;
+        &__user-name {
+            height: 100px;
+            padding: 0 20px;
+            background-color: $user-name;
+            font-size: 16px;
+            line-height: 100px;
+            h2 {
+                float: left;
+            }
+            i {
+                float: right;
+                padding-left: 5px;
+                padding-top: 40px;
+                color: white;
+            }
         }
-        i {
-            float: right;
-            padding-left: 5px;
-            padding-top: 40px;
-            color: white;
+        &__group-list{
+            height: calc(100% - 100px);
+            overflow: scroll;
+            background-color: $group;
+            a {
+                text-decoration: none;
+                color: white;
+                display: block;
+                &:hover {
+                    background-color: $hover-group;
+                }
+            }
         }
-    }
-    &__group-list{
-        height: 730px;
-        overflow: scroll;
     }
 }
 
 .group {
     height: 100px;
-    padding: 0 20px;
-    background-color: $group;
-    padding: 20px 20px 40px;
+    padding: 20px 20px 0;
     &__name{
       font-size: 15px;
       margin-bottom: 5px;
@@ -50,22 +64,22 @@
     }
 }
 
-// 右半分ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 .content__right-content{
     float: left;
-    width: 1000px;
-    width: -webkit-calc(100% - 380px);
-    width: -moz-calc(100% - 380px);
+    height: 100%;
     width: calc(100% - 380px);
     &__main-content {
         width: 100%;
+        height: calc(100% - 100px);
         background-color: white;
         &__head-wrapper{
             @include clearfix();
             width: 100%;
+            height: 15%;
             padding: 0 40px 10px;
             border-bottom: 1px solid $border;
-            &__edit-btn {
+            &__edit-btn a{
+                text-decoration: none;
                 float: right;
                 color: $edit-btn;
                 line-height: 40px;
@@ -73,6 +87,11 @@
                 margin-top: 28px;
                 border: 1px solid $edit-btn;
                 padding: 0 20px;
+                display: block;
+                &:hover {
+                    color: white;
+                    background-color: $edit-btn;
+                }
             }
             &__group {
                 float: left;
@@ -89,10 +108,47 @@
         }
         &__main-wrapper{
             width: 100%;
+            height: 85%;
             overflow: scroll;
             background-color: rgba(170,170,170,0.05);
             padding: 0 40px;
-            max-height: 600px;
+        }
+    }
+    &__form-wrapper {
+        position: fixed;
+        bottom: 0;
+        background-color: $form;
+        width: 100%;
+        height: 90px;
+        &__text {
+            margin: 20px 40px;
+            height: $form-height;
+            line-height: 50px;
+            width: calc(100% - 380px);
+            input {
+                float: left;
+                height: $form-height;
+                border: none;
+                width: calc(100% - 150px);
+            }
+            .fa.fa-picture-o {
+                float: left;
+                line-height: $form-height;
+                width: 50px;
+                text-align: center;
+                padding-right: 10px;
+                margin-right: 15px;
+                background-color: white;
+            }
+            .submit {
+                float: left;
+                width: 60px;
+                text-align: center;
+                line-height: $form-height;
+                color: white;
+                background-color: $send-btn;
+                border: 1px solid $send-btn;
+            }
         }
     }
 }
@@ -116,56 +172,6 @@
         &__date {
             float: left;
             font-size: 12px;
-        }
-    }
-}
-
-
-
-
-// 投稿フォーム---------------------------------------------------------------
-$form-height: 50px;
-
-.content__right-content__form-wrapper {
-    position: fixed;
-    bottom: 0;
-    background-color: $form;
-    width: 100%;
-    height: 90px;
-    &__text {
-        margin: 20px 40px;
-        height: $form-height;
-        line-height: 50px;
-        width: 700px;
-        width: -webkit-calc(100% - 380px);
-        width: -moz-calc(100% - 380px);
-        width: calc(100% - 380px);
-        input {
-            float: left;
-            height: $form-height;
-            border: none;
-            width: 700px;
-            width: -webkit-calc(100% - 150px);
-            width: -moz-calc(100% - 150px);
-            width: calc(100% - 150px);
-        }
-        span {
-            float: left;
-            line-height: $form-height;
-            width: 50px;
-            text-align: center;
-            padding-right: 10px;
-            margin-right: 15px;
-            background-color: white;
-        }
-        p {
-            float: left;
-            width: 60px;
-            text-align: center;
-            line-height: $form-height;
-            color: white;
-            background-color: $send-btn;
-            border: 1px solid $send-btn;
         }
     }
 }

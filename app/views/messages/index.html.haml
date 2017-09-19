@@ -1,30 +1,37 @@
 .content
-  .content__side-content
-    .content__side-content__user-name
-      %h2 username
-      = link_to  edit_user_path(current_user) do
-        %i.fa.fa-cog
-      = link_to  new_group_path do
-        %i.fa.fa-pencil-square-o
-    .content__side-content__group-list
-      = render "group"
-  .content__right-content
-    .content__right-content__main-content
-      .content__right-content__main-content__head-wrapper
-        .content__right-content__main-content__head-wrapper__group
-          .content__right-content__main-content__head-wrapper__group__name
-            smpleグループ
-          .content__right-content__main-content__head-wrapper__group__member
-            member: seo neko
-        .content__right-content__main-content__head-wrapper__edit-btn
-          Edit
-      .content__right-content__main-content__main-wrapper
-        = render "post"
-    .content__right-content__form-wrapper
-      %ul{class: "content__right-content__form-wrapper__text"}
-        %li
-          %input{type: "text", name: "message", placeholder: "type a message", id: "aaa"}
-        %li
-          %span.fa.fa-picture-o
-        %li
-          %p<>Send
+  = form_for [@group, @message] do |f|
+    .content__side-content
+      .content__side-content__user-name
+        %h2
+          = current_user.username
+        = link_to  edit_user_path(current_user) do
+          %i.fa.fa-cog
+        = link_to  new_group_path do
+          %i.fa.fa-pencil-square-o
+      .content__side-content__group-list
+        = render "group"
+    .content__right-content
+      .content__right-content__main-content
+        .content__right-content__main-content__head-wrapper
+          .content__right-content__main-content__head-wrapper__group
+            .content__right-content__main-content__head-wrapper__group__name
+              = @group.name
+            .content__right-content__main-content__head-wrapper__group__member
+              member : 
+              - @group.users.each do |user|
+                = user.username
+          .content__right-content__main-content__head-wrapper__edit-btn
+            = link_to edit_group_path(@group.id) do
+              Edit
+        .content__right-content__main-content__main-wrapper
+          = render "post"
+      .content__right-content__form-wrapper
+        %ul{class: "content__right-content__form-wrapper__text"}
+          %li
+            = f.text_field :content, placeholder: " type a message",html: {id: "aaa"}
+            / %input{type: "text", name: "message", placeholder: "type a message", id: "aaa"}
+          %label
+            %p.fa.fa-picture-o
+            = f.file_field :image, style: "display:none;"
+          %li
+            = f.submit "Send", class: "submit"
