@@ -10,7 +10,6 @@ describe Message do
     end
 
     it 'is valid with a message' do
-      # binding.pry
       message = build(:message, image: "")
       expect(message).to be_valid
     end
