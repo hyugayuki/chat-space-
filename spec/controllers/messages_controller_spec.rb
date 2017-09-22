@@ -5,7 +5,6 @@ describe MessagesController do
   let(:user) { create(:user) }
   let(:group){ create(:group) }
   let(:message){ create(:message) }
-  # let(:member){user: user, group: group}
 
 
   describe 'GET #index' do
@@ -22,6 +21,7 @@ describe MessagesController do
         expect(response).to render_template :index
       end
     end
+
     context 'user_signed_out' do
       it 'redirect sign_in' do
         get :index, group_id: group
@@ -37,16 +37,17 @@ describe MessagesController do
       before do
        login_user user
       end
+
       context 'succes in saving' do
         it 'saved on database' do
           expect{ post :create, params: { group_id: group, message: attributes_for(:message) } }.to change{ Message.count }.by(1)
-          # binding.pry
         end
         it 'redirect_to group_messages_path after saving' do
           post :create, params: { group_id: group, message: attributes_for(:message)}
           expect(response).to redirect_to group_messages_path
         end
       end
+
       context 'mistake to save' do
         it 'mistook to save on database' do
           expect{ post :create, params: { group_id: group, message: attributes_for(:message, content: nil, image: nil) } }.to change{ Message.count }.by(0)
