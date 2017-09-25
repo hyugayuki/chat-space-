@@ -25,11 +25,11 @@
               Edit
         .content__right-content__main-content__main-wrapper
           = render "post"
+          .scroll_target
       .content__right-content__form-wrapper
         %ul{class: "content__right-content__form-wrapper__text"}
           %li
-            = f.text_field :content, placeholder: " type a message",html: {id: "aaa"}
-            / %input{type: "text", name: "message", placeholder: "type a message", id: "aaa"}
+            = f.text_field :content, placeholder: " type a message"
           %label
             %p.fa.fa-picture-o
             = f.file_field :image, style: "display:none;"
