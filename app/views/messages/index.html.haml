@@ -1,5 +1,5 @@
 .content
-  = form_for [@group, @message], html: {id: "submit_message"} do |f|
+  = form_for [@group, @message] do |f|
     .content__side-content
       .content__side-content__user-name
         %h2
@@ -29,9 +29,9 @@
       .content__right-content__form-wrapper
         %ul{class: "content__right-content__form-wrapper__text"}
           %li
-            = f.text_field :content, placeholder: " type a message",html: {class: "posted_message", id: "aaa"}
+            = f.text_field :content, placeholder: " type a message"
           %label
             %p.fa.fa-picture-o
-            = f.file_field :image, class: "posted_message", style: "display:none;"
+            = f.file_field :image, style: "display:none;"
           %li
             = f.submit "Send", class: "submit"
