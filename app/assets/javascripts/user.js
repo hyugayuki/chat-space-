@@ -9,10 +9,6 @@ $(function(){
                 </div>`
     return html;
   }
-  function appendNouser(comment){
-    var html = `<div>${ comment }</div>`
-    return html;
-  }
   function listedUser(user){
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${ user.username}</p>
@@ -40,8 +36,7 @@ $(function(){
           search_list.append(html);
         });
       }else{
-        var html = appendNouser("一致するユーザーはありません");
-        search_list.append(html);
+        search_list.append(("<div>一致するユーザーはありません</div>");
       }
     })
     .fail(function() {
