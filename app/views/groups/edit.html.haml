@@ -10,9 +10,9 @@
             %li= msg
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        %label.chat-group-form__label{:for => "chat_group_name"} グループ名
+        %label.chat-group-form__label{for: "chat_group_name"} グループ名
       .chat-group-form__field--right
-        = f.text_field :name, :type => "text", placeholder: "グループ名を入力してください", :value => "ほげー", html: {class: "chat-group-form__input", id:"chat_group_name"}
+        = f.text_field :name, type: "text", value: @group.name, html: {class: "chat-group-form__input", id:"chat_group_name"}
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         =f.label "チャットメンバーを追加",class: "chat-group-form__label", for: "chat_group_チャットメンバーを追加"
@@ -22,7 +22,7 @@
         #user-search-result
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
+        %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
       .chat-group-form__field--right
         - @group.users.each do |user|
           .chat-group-user.clearfix
