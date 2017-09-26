@@ -16,6 +16,7 @@ $(function(){
   function listedUser(user){
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${ user.username}</p>
+                  <input type="hidden" name="group[user_ids][]"  value="${user.id}">
                   <a class="user-search-add chat-group-user__btn chat-group-user__btn--remove" data-user-id="${ user.id }" data-user-name="${ user.username }">削除</a>
                 </div>`
     return html;
