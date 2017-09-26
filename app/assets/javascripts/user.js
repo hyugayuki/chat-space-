@@ -35,7 +35,7 @@ $(function(){
           search_list.append(html);
         });
       }else{
-        search_list.append(("<div>一致するユーザーはありません</div>");
+        search_list.append("<div>一致するユーザーはありません</div>");
       }
     })
     .fail(function() {
