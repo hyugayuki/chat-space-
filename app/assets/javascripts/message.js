@@ -4,7 +4,7 @@ $(function(){
     if (message.image != null){
       image_box = `<img src="${message.image}">`
     }
-    var html = `<div class="message" data-message-id="${id}">
+    var html = `<div class="message" data-message-id="${ message.id }">
                   <div class="message__info">
                     <h4 class="message__info__name">
                       ${ message.username }
