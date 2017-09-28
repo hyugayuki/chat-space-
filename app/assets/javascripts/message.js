@@ -49,4 +49,7 @@ $(function(){
         }, 500);
         return false;
   });
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+    }else {
+      clearInterval(interval);
 });
