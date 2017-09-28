@@ -26,7 +26,7 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    var scroll_target = $('.scroll_target').offset().top;
+    var scroll_target = $('.message:last-child').offset().top;
     $.ajax({
       type: 'POST',
       url: url,
@@ -57,7 +57,7 @@ $(function(){
         dataType: 'json'
       })
       .done(function(messages) {
-        var newest_id = $(".content__right-content__main-content__main-wrapper .message:last-child").data("message-id");
+        var newest_id = $(".message:last-child").data("message-id");
         var insertHTML = '';
         messages.forEach(function(data) {
           if ( data.id > newest_id ) {
