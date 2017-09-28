@@ -1,5 +1,5 @@
 - @group.messages.each do |message|
-  .message
+  .message{"data-message-id": "#{message.id}"}
     .message__info
       %h4.message__info__name
         = message.user.username
